@@ -6,6 +6,8 @@ const cors = require('cors');
 const parser = require("body-parser")
 const app = express();
 app.use(cors())
+require("dotenv").config()
+
 app.use(parser.json({extended: true}));
 app.use(parser.urlencoded({extended: true}));
 app.use("/",userController)
@@ -13,7 +15,7 @@ app.use("/",userController)
 
 
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, async () => {
     try{
