@@ -2,7 +2,7 @@ const grid = require("gridfs-stream");
 const mongoose = require("mongoose")
 
 
-const url = 'http://localhost:8080';
+const url = 'https://server-for-whatsapp-service.onrender.com';
 let gfs, gridfsBucket;
 const conn = mongoose.connection;
 conn.once('open', () => {
